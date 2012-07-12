@@ -7,7 +7,7 @@
         <link type="text/css" href="css/bootstrap.min.css" REL=StyleSheet>
         
         <script>
-            //Verificamos la extensión del archivo seleccionado
+            //Verificamos la extension del archivo seleccionado
             $(document).ready(function()
             {
                 
