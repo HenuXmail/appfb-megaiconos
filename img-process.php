@@ -14,6 +14,7 @@ $size = $_FILES['photoimg']['size'];
 if(strlen($name))
 {
     list($txt, $ext) = explode(".", $name);
+    $ext = strtolower($ext);
     if(in_array($ext,$valid_formats))
     {
         if($size<(1024*1024)) // Image size max 1 MB
