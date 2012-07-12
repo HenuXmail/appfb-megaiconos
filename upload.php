@@ -2,6 +2,7 @@
     <head>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery-1.7.2.min.js"></script>
+        <script src="js/jquery.Jcrop.min.js"></script>
         <script type="text/javascript" src="js/jquery.form.js"></script>
         <link type="text/css" href="css/bootstrap.min.css" REL=StyleSheet>
         
@@ -27,7 +28,10 @@
                         $("#form-imagen").ajaxForm(
                         {
                             target: '#preview'
-                        }).submit();                      
+                        }).submit();   
+                        
+                        //Activamos Jcrop en el div
+                        $('#preview').Jcrop();
                     }
                     
                     
@@ -40,7 +44,7 @@
         <h4>Selecciona una imagen:</h4>
         <form action="img-process.php" id="form-imagen" method="post" enctype="multipart/form-data" >
             <input type="file" class="imagen" id="photoimg" name="photoimg"><br>
-            <div id='preview' style="width:400px; height:400px"></div>
+            <div id='preview' style="width:400px; height:400px;"></div>
             <input type="submit" class="submit btn btn-primary">
         </form>
         </center>
