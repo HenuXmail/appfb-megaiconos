@@ -23,7 +23,7 @@
                     {
                         //Cargar el div con la imagen subida
                         $("#preview").html('');
-                        $("#preview").html('<img src="img/loader.gif" alt="Uploading...."/>');
+                        $("#preview").html('<img src="loader.gif" alt="Uploading...."/>');
                         $("#form-imagen").ajaxForm(
                         {
                             target: '#preview'
