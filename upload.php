@@ -1,10 +1,12 @@
 <html>
     <head>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.js"></script>
         <script src="js/jquery-1.7.2.min.js"></script>
         <script src="js/jquery.Jcrop.min.js"></script>
         <script type="text/javascript" src="js/jquery.form.js"></script>
+        
         <link type="text/css" href="css/bootstrap.min.css" REL=StyleSheet>
+<!--        <link type="text/css" href="css/jquery.Jcrop.min.css" REL=StyleSheet>-->
         
         <script>
             //Verificamos la extension del archivo seleccionado
@@ -31,11 +33,33 @@
                         }).submit();   
                         
                         //Activamos Jcrop en el div
-                        $('#preview').Jcrop();
+                        $('#preview').Jcrop({
+                            onChange:   showCoords,
+                            onSelect:   showCoords,
+                            onRelease:  clearCoords
+                        });
                     }
                     
                     
                 });
+                
+                
+                
+                //Mostrar coordenadas JCrop
+                function showCoords(c)
+                {
+                $('#x1').val(c.x);
+                $('#y1').val(c.y);
+                $('#x2').val(c.x2);
+                $('#y2').val(c.y2);
+                $('#w').val(c.w);
+                $('#h').val(c.h);
+                };
+                
+                function clearCoords()
+                {
+                $('#coords input').val('');
+                };
             });
         </script>
     </head>
@@ -44,9 +68,18 @@
         <h4>Selecciona una imagen:</h4>
         <form action="img-process.php" id="form-imagen" method="post" enctype="multipart/form-data" >
             <input type="file" class="imagen" id="photoimg" name="photoimg"><br>
-            <div id='preview' style="width:400px; height:400px;"></div>
+            <div id='preview' style="width:100%; height:90%; "></div>
             <input type="submit" class="submit btn btn-primary">
         </form>
+
+<!--        Coordenadas JCrop-->
+        <input type="hidden" size="4" id="x1" name="x1" />
+        <input type="hidden" size="4" id="y1" name="y1" />
+        <input type="hidden" size="4" id="x2" name="x2" />
+        <input type="hidden" size="4" id="y2" name="y2" />
+        <input type="hidden" size="4" id="w" name="w" />
+        <input type="hidden" size="4" id="h" name="h" />
+        
         </center>
     </body>
 </html>
