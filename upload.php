@@ -36,7 +36,8 @@
                         $('#preview').Jcrop({
                             onChange:   showCoords,
                             onSelect:   showCoords,
-                            onRelease:  clearCoords
+                            onRelease:  clearCoords,
+                            aspectRatio: 4/4
                         });
                     }
                     
@@ -68,8 +69,10 @@
         <h4>Selecciona una imagen:</h4>
         <form action="img-process.php" id="form-imagen" method="post" enctype="multipart/form-data" >
             <input type="file" class="imagen" id="photoimg" name="photoimg"><br>
-            <div id='preview' style="width:100%; height:90%; "></div>
-            <input type="submit" class="submit btn btn-primary">
+            <div id='preview' style="width:70%; height:60%; position: relative; overflow:auto ">
+              
+            </div>
+            <hr><input type="submit" class="submit btn btn-primary">
         </form>
 
 <!--        Coordenadas JCrop-->

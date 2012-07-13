@@ -24,7 +24,7 @@ if(strlen($name))
             if(move_uploaded_file($tmp, $path.$actual_image_name))
             {
                 //mysql_query("UPDATE users SET profile_image='$actual_image_name' WHERE uid='$session_id'");
-                echo "<img src='uploads/".$actual_image_name."' class='preview'>";
+                echo "<img src='uploads/".$actual_image_name."' class='preview' id='image-to-crop'>";
             }
             else
             echo "e r r o r";
