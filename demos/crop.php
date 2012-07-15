@@ -43,7 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
 				$('#cropbox').Jcrop({
 					aspectRatio: 1,
-					onSelect: updateCoords
+					onSelect: updateCoords,
+					boxWidth: 450, 
+					boxHeight: 400
 				});
 
 			});

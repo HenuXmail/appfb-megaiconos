@@ -4,3 +4,12 @@
 	height: 400px;
 	margin: auto auto;
 }
+
+.contenedor #preview{
+	width:450px; 
+	height:300px; 
+	background-color: #FFF;
+	position: relative; 
+	overflow: hidden; 
+	margin: auto auto;
+}

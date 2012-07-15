@@ -25,6 +25,7 @@ if(strlen($name))
             {
                 //mysql_query("UPDATE users SET profile_image='$actual_image_name' WHERE uid='$session_id'");
                 echo "<img src='uploads/".$actual_image_name."' class='preview' id='image-to-crop'>";
+				echo "<input type='hidden' value='uploads/".$actual_image_name."' id='url' name='url'/>";
             }
             else
             echo "e r r o r";
