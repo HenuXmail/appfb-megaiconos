@@ -44,7 +44,7 @@
 					<div id='preview'></div>	
 					
 					<div class="form-actions">
-						<input type="submit" class="submit btn btn-primary">
+						<input type="submit" class="submit btn btn-primary" value="Siguiente">
 					</div>
 				</form>
 				

@@ -13,11 +13,13 @@ $url 	= $_POST['url'];
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-
+		
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/jquery.Jcrop.js"></script>
+		
+		
 		<link rel="stylesheet" href="../css/jquery.Jcrop.css" type="text/css" />
-		<link rel="stylesheet" href="demo_files/demos.css" type="text/css" />
+		<link type="text/css" href="css/estilos.css" REL=StyleSheet>
 
 		<script language="Javascript">
 
@@ -53,27 +55,24 @@ $url 	= $_POST['url'];
 
 	<body>
 
-	<div id="outer">
-	<div class="jcExample">
-	<div class="article">
+		<div class="contenedor ">
 
-		<h1>Jcrop - Crop Behavior</h1>
-
-		<!-- This is the image we're attaching Jcrop to -->
-		<img src="<?php echo $url ?>" id="cropbox">
-		<!-- This is the form that our event handler fills -->
-		<form action="crop.php" method="post" onsubmit="return checkCoords();">
-			<input type="hidden" id="x" name="x" />
-			<input type="hidden" id="y" name="y" />
-			<input type="hidden" id="w" name="w" />
-			<input type="hidden" id="h" name="h" />
-			<input type='hidden' value='<?php echo $url ?>' id='url' name='url'/>
-			<input type="submit" value="Crop Image" />
-		</form>
-
-	</div>
-	</div>
-	</div>
+			<h4>Seleccione area de corte:</h4>
+	
+			<!-- This is the image we're attaching Jcrop to -->
+			<img src="<?php echo $url ?>" id="cropbox">
+			<!-- This is the form that our event handler fills -->
+			<form action="crop.php" method="post" onsubmit="return checkCoords();">
+				<input type="hidden" id="x" name="x" />
+				<input type="hidden" id="y" name="y" />
+				<input type="hidden" id="w" name="w" />
+				<input type="hidden" id="h" name="h" />
+				<input type='hidden' value='<?php echo $url ?>' id='url' name='url'/>
+				<div class="form-actions">
+						<input type="submit" class="submit btn btn-primary" value="Siguiente">
+					</div>
+			</form>
+		</div>
 	</body>
 
 </html>
