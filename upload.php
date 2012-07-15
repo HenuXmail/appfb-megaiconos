@@ -27,40 +27,8 @@
 						$("#form-imagen").ajaxForm({
 							target : '#preview'
 						}).submit();
-
-						//Activamos Jcrop en el div
-						$('#preview').Jcrop({
-							//onChange : showCoords,
-							onSelect : updateCoords,
-							//onRelease : clearCoords,
-							aspectRatio : 1,
-							//boxWidth : 500
-							boxWidth: 450, 
-							boxHeight: 400
-						});
 					}
-
 				});
-				function updateCoords(c)
-				{
-					$('#x').val(c.x);
-					$('#y').val(c.y);
-					$('#w').val(c.w);
-					$('#h').val(c.h);
-				};
-				//Mostrar coordenadas JCrop
-				function showCoords(c) {
-					$('#x1').val(c.x);
-					$('#y1').val(c.y);
-					$('#x2').val(c.x2);
-					$('#y2').val(c.y2);
-					$('#w').val(c.w);
-					$('#h').val(c.h);
-				};
-
-				function clearCoords() {
-					$('#coords input').val('');
-				};
 			});
 		</script>
 	</head>
@@ -71,19 +39,13 @@
 				<form action="img-process.php" id="form-imagen" method="post" enctype="multipart/form-data" >
 					<input type="file" class="imagen" id="photoimg" name="photoimg">
 				</form>
-				
-				<form action="cut.php" method="post">
-					<div id='preview'></div>
+				<?php //se procede a la pagina de seleccion del area de recorte ?>
+				<form action="select.php" method="post">
+					<div id='preview'></div>	
 					
 					<div class="form-actions">
 						<input type="submit" class="submit btn btn-primary">
 					</div>
-					<!--        Coordenadas JCrop-->
-		
-					<input type="hidden" id="x" name="x" />
-					<input type="hidden" id="y" name="y" />
-					<input type="hidden" id="w" name="w" />
-					<input type="hidden" id="h" name="h" />
 				</form>
 				
 				
