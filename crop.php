@@ -21,10 +21,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	$imagen	=	recortar_imagen($src, 'henux', $x, $y, $h, $w);
 	//Se crean las miniaturas en base al recorte anteriorna
 	$imagenes = crear_miniatura($imagen, 15, 15, 6, 6, 'henux');
-	print_r($imagenes);
-	exit;
+	
 }
+?>
 
+<div class="contenedor">
+	<p>Imagen original</p>
+	<img src="<?php echo $imagenes[0] ?>" />
+	<p>Imagen creada con los recortes de 15x15</p>
+	<?php
+	for ($i=1; $i <= 36; $i++) {
+		if ($i == 7 || $i == 13 || $i == 19 || $i == 25 || $i == 31) {
+			echo "<br>";
+		} 
+		echo "<img src='".$imagenes[$i]."' />";
+	}
+	?>
+	
+</div>
+
+<?php
 /**
  * Funcrion que recorta la imagen seleccionada por el usuario
  *
