@@ -1,3 +1,29 @@
+<?php
+require_once('config.php');
+$facebook = new Facebook($config);
+
+$user_id = $facebook->getUser();
+
+    if($user_id) {
+      try {
+        $user_profile = $facebook->api('/me','GET');
+        echo "Nombre: " . $user_profile['name'];
+      } catch(FacebookApiException $e) {
+        $login_url = $facebook->getLoginUrl(); 
+        echo '<br>Please <a href="' . $login_url . '">login.</a><br>';
+        echo($e->getType());
+		echo "<br>";
+        echo($e->getMessage());
+      }   
+    } else {
+
+      // No usuario, enlace a login
+      $login_url = $facebook->getLoginUrl();
+      echo 'Please <a href="' . $login_url . '">login.</a>';
+
+    }
+
+?>
 <html>
 	<head>
 		<script src="js/bootstrap.js"></script>

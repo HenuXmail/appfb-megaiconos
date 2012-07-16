@@ -12,7 +12,7 @@ $message = 'Photo upload via the PHP SDK!';
   <head></head>
   <body>
 
-  <?
+  <?php
     if($user_id) {
       try {
         $user_profile = $facebook->api('/me','GET');
